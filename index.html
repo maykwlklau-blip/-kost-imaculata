@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Portal Anak Kos | Kost Imaculata</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =====================================================
+       DASAR
+    ===================================================== */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f6f8;
+        color: #222;
+      }
+
+      :root {
+        --utama: #6f42c1;
+        --utama-gelap: #4b2a83;
+        --emas: #dca900;
+        --hitam: #171717;
+        --abu: #6c757d;
+        --putih: #ffffff;
+        --soft: #f1ecf8;
+        --hijau: #198754;
+        --merah: #dc3545;
+      }
+
+      /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+      .navbar {
+        background: #171717;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar-brand {
+        color: white !important;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+
+      .navbar-brand span {
+        color: var(--emas);
+      }
+
+      .nav-link {
+        color: white !important;
+        font-weight: 500;
+        margin-left: 5px;
+        transition: 0.3s;
+      }
+
+      .nav-link:hover {
+        color: var(--emas) !important;
+      }
+
+      .navbar-toggler {
+        background: var(--emas);
+      }
+
+      /* =====================================================
+       HERO
+    ===================================================== */
+
+      .hero {
+        min-height: 75vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(rgba(20, 15, 30, 0.86), rgba(20, 15, 30, 0.88)), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80');
+
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 50px;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 7vw, 72px);
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .hero h1 span {
+        color: var(--emas);
+      }
+
+      .hero p {
+        color: #ddd;
+        font-size: 18px;
+        margin-top: 20px;
+        max-width: 700px;
+      }
+
+      .btn-utama {
+        background: var(--emas);
+        color: #111;
+        border: none;
+        font-weight: bold;
+        padding: 12px 24px;
+        border-radius: 50px;
+      }
+
+      .btn-utama:hover {
+        background: #f4c52f;
+        color: #111;
+      }
+
+      .btn-outline-light-custom {
+        border: 1px solid white;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+      }
+
+      .btn-outline-light-custom:hover {
+        background: white;
+        color: #111;
+      }
+
+      /* =====================================================
+       SECTION
+    ===================================================== */
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .section-soft {
+        background: var(--soft);
+      }
+
+      .section-title {
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .section-subtitle {
+        color: var(--abu);
+        max-width: 650px;
+        margin: auto;
+      }
+
+      /* =====================================================
+       WELCOME CARD
+    ===================================================== */
+
+      .welcome-card {
+        background: white;
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        margin-top: -70px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .welcome-icon {
+        width: 65px;
+        height: 65px;
+        border-radius: 18px;
+        background: var(--soft);
+        color: var(--utama);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+      }
+
+      /* =====================================================
+       QUICK MENU
+    ===================================================== */
+
+      .menu-card {
+        background: white;
+        padding: 25px 18px;
+        border-radius: 20px;
+        text-align: center;
+        height: 100%;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.06);
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 17px;
+        background: var(--soft);
+        color: var(--utama);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        margin: auto;
+      }
+
+      .menu-card h5 {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      .menu-card p {
+        color: var(--abu);
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+
+      /* =====================================================
+       PENGUMUMAN
+    ===================================================== */
+
+      .announcement-card {
+        background: white;
+        padding: 23px;
+        border-radius: 20px;
+        height: 100%;
+        box-shadow: 0 7px 22px rgba(0, 0, 0, 0.06);
+        border-left: 5px solid var(--utama);
+      }
+
+      .announcement-date {
+        color: var(--abu);
+        font-size: 13px;
+      }
+
+      .announcement-card h5 {
+        font-weight: bold;
+        margin-top: 8px;
+      }
+
+      /* =====================================================
+       PIKET
+    ===================================================== */
+
+      .schedule-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 7px 22px rgba(0, 0, 0, 0.06);
+      }
+
+      .schedule-card table {
+        margin-bottom: 0;
+      }
+
+      .status-selesai {
+        background: #d1e7dd;
+        color: #0f5132;
+        padding: 5px 10px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .status-proses {
+        background: #fff3cd;
+        color: #664d03;
+        padding: 5px 10px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .status-belum {
+        background: #f8d7da;
+        color: #842029;
+        padding: 5px 10px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      /* =====================================================
+       IURAN
+    ===================================================== */
+
+      .money-card {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        height: 100%;
+        box-shadow: 0 7px 22px rgba(0, 0, 0, 0.06);
+      }
+
+      .money-icon {
+        width: 55px;
+        height: 55px;
+        background: #e7f5ec;
+        color: var(--hijau);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+      }
+
+      .money-price {
+        font-size: 24px;
+        font-weight: 800;
+        margin-top: 15px;
+      }
+
+      /* =====================================================
+       PENGHUNI
+    ===================================================== */
+
+      .member-card {
+        background: white;
+        border-radius: 20px;
+        padding: 20px;
+        height: 100%;
+        box-shadow: 0 7px 22px rgba(0, 0, 0, 0.06);
+        transition: 0.3s;
+      }
+
+      .member-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .member-avatar {
+        width: 55px;
+        height: 55px;
+        background: var(--soft);
+        color: var(--utama);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+        font-weight: bold;
+      }
+
+      .member-card h5 {
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+
+      .member-card small {
+        color: var(--abu);
+      }
+
+      /* =====================================================
+       LAPOR MASALAH
+    ===================================================== */
+
+      .report-box {
+        background: linear-gradient(135deg, var(--utama), var(--utama-gelap));
+        color: white;
+        border-radius: 25px;
+        padding: 45px;
+      }
+
+      .report-box h2 {
+        font-weight: 800;
+      }
+
+      /* =====================================================
+       KEGIATAN
+    ===================================================== */
+
+      .activity-card {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        height: 100%;
+        box-shadow: 0 7px 22px rgba(0, 0, 0, 0.06);
+      }
+
+      .activity-icon {
+        font-size: 35px;
+        color: var(--utama);
+      }
+
+      /* =====================================================
+       ATURAN
+    ===================================================== */
+
+      .rule-card {
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 7px 22px rgba(0, 0, 0, 0.06);
+      }
+
+      .rule-item {
+        display: flex;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .rule-item:last-child {
+        border-bottom: none;
+      }
+
+      .rule-item i {
+        color: var(--utama);
+        font-size: 20px;
+      }
+
+      /* =====================================================
+       FOOTER
+    ===================================================== */
+
+      footer {
+        background: #111;
+        color: #aaa;
+        padding: 40px 0;
+      }
+
+      footer strong {
+        color: white;
+      }
+
+      /* =====================================================
+       FLOATING WHATSAPP
+    ===================================================== */
+
+      .whatsapp-floating {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 58px;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #25d366;
+        color: white;
+        border-radius: 50%;
+        font-size: 28px;
+        z-index: 9999;
+        text-decoration: none;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .whatsapp-floating:hover {
+        color: white;
+        transform: scale(1.08);
+      }
+
+      /* =====================================================
+       MOBILE
+    ===================================================== */
+
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 80vh;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        .section {
+          padding: 55px 0;
+        }
+
+        .welcome-card {
+          margin-top: -40px;
+        }
+
+        .report-box {
+          padding: 30px 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a
+          class="navbar-brand"
+          href="#beranda"
+        >
+          🏠 KOST <span>IMACULATA</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuNavbar"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div
+          class="collapse navbar-collapse"
+          id="menuNavbar"
+        >
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#beranda"
+              >
+                Beranda
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#pengumuman"
+              >
+                Pengumuman
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#piket"
+              >
+                Piket
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#iuran"
+              >
+                Iuran
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#penghuni"
+              >
+                Penghuni
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#kegiatan"
+              >
+                Kegiatan
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+     BERANDA
+===================================================== -->
+
+    <section
+      id="beranda"
+      class="hero"
+    >
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <i class="bi bi-people-fill"></i>
+            Portal Internal Anak Kos
+          </span>
+
+          <h1>
+            Selamat Datang di
+            <span>Kost Imaculata</span>
+          </h1>
+
+          <p>Ruang bersama untuk anak-anak Kost Imaculata. Di sini kita bisa melihat informasi kos, jadwal piket, pengumuman, iuran, kegiatan, dan saling membantu satu sama lain.</p>
+
+          <div class="mt-4">
+            <a
+              href="#pengumuman"
+              class="btn btn-utama me-2 mb-2"
+            >
+              <i class="bi bi-megaphone-fill"></i>
+              Lihat Pengumuman
+            </a>
+
+            <a
+              href="#penghuni"
+              class="btn btn-outline-light-custom mb-2"
+            >
+              <i class="bi bi-people"></i>
+              Anak Kos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     WELCOME
+===================================================== -->
+
+    <section class="container">
+      <div class="welcome-card">
+        <div class="row align-items-center g-4">
+          <div class="col-md-2 text-center">
+            <div class="welcome-icon mx-auto">
+              <i class="bi bi-house-heart-fill"></i>
+            </div>
+          </div>
+
+          <div class="col-md-7">
+            <h3 class="fw-bold">Rumah kedua kita.</h3>
+
+            <p class="text-secondary mb-0">Kost bukan hanya tempat tinggal. Di sini kita belajar hidup bersama, saling menghargai, saling membantu, dan menjaga kenyamanan bersama.</p>
+          </div>
+
+          <div class="col-md-3 text-md-end">
+            <span class="badge text-bg-success p-2">
+              <i class="bi bi-circle-fill"></i>
+              12 Penghuni
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     MENU CEPAT
+===================================================== -->
+
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <small class="text-uppercase fw-bold"> Menu Cepat </small>
+
+          <h2 class="section-title display-6">Apa yang ingin kamu lihat?</h2>
+
+          <p class="section-subtitle">Semua informasi yang dibutuhkan anak kos tersedia di satu tempat.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-6 col-lg-3">
+            <a
+              href="#pengumuman"
+              class="text-decoration-none text-dark"
+            >
+              <div class="menu-card">
+                <div class="menu-icon">
+                  <i class="bi bi-megaphone-fill"></i>
+                </div>
+
+                <h5>Pengumuman</h5>
+
+                <p>Informasi terbaru kost</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <a
+              href="#piket"
+              class="text-decoration-none text-dark"
+            >
+              <div class="menu-card">
+                <div class="menu-icon">
+                  <i class="bi bi-calendar-check"></i>
+                </div>
+
+                <h5>Jadwal Piket</h5>
+
+                <p>Jadwal kebersihan bersama</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <a
+              href="#iuran"
+              class="text-decoration-none text-dark"
+            >
+              <div class="menu-card">
+                <div class="menu-icon">
+                  <i class="bi bi-wallet2"></i>
+                </div>
+
+                <h5>Iuran</h5>
+
+                <p>Informasi iuran bersama</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <a
+              href="#lapor"
+              class="text-decoration-none text-dark"
+            >
+              <div class="menu-card">
+                <div class="menu-icon">
+                  <i class="bi bi-tools"></i>
+                </div>
+
+                <h5>Lapor Masalah</h5>
+
+                <p>Laporkan fasilitas bermasalah</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     PENGUMUMAN
+===================================================== -->
+
+    <section
+      id="pengumuman"
+      class="section section-soft"
+    >
+      <div class="container">
+        <div class="text-center mb-5">
+          <small class="text-uppercase fw-bold"> Informasi </small>
+
+          <h2 class="section-title display-6">Pengumuman Anak Kos</h2>
+
+          <p class="section-subtitle">Informasi yang perlu diketahui bersama.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="announcement-card">
+              <div class="announcement-date">
+                <i class="bi bi-calendar3"></i>
+                28 September 2026
+              </div>
+
+              <h5>Kerja Bakti Kost</h5>
+
+              <p class="text-secondary">Semua penghuni diharapkan ikut kerja bakti membersihkan halaman dan area bersama.</p>
+
+              <span class="badge text-bg-warning"> Penting </span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="announcement-card">
+              <div class="announcement-date">
+                <i class="bi bi-calendar3"></i>
+                27 September 2026
+              </div>
+
+              <h5>Kebersihan Dapur</h5>
+
+              <p class="text-secondary">Setelah menggunakan dapur, harap membersihkan kembali peralatan dan tempat yang digunakan.</p>
+
+              <span class="badge text-bg-primary"> Pengingat </span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="announcement-card">
+              <div class="announcement-date">
+                <i class="bi bi-calendar3"></i>
+                25 September 2026
+              </div>
+
+              <h5>Rapat Anak Kos</h5>
+
+              <p class="text-secondary">Akan dilakukan pertemuan untuk membahas kebutuhan dan aturan bersama di kost.</p>
+
+              <span class="badge text-bg-success"> Kegiatan </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     JADWAL PIKET
+===================================================== -->
+
+    <section
+      id="piket"
+      class="section"
+    >
+      <div class="container">
+        <div class="text-center mb-5">
+          <small class="text-uppercase fw-bold"> Kebersihan </small>
+
+          <h2 class="section-title display-6">Jadwal Piket</h2>
+
+          <p class="section-subtitle">Kebersihan adalah tanggung jawab kita bersama.</p>
+        </div>
+
+        <div class="schedule-card">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th>No</th>
+                  <th>Hari</th>
+                  <th>Penghuni</th>
+                  <th>Bagian</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="jadwalPiket"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     IURAN
+===================================================== -->
+
+    <section
+      id="iuran"
+      class="section section-soft"
+    >
+      <div class="container">
+        <div class="text-center mb-5">
+          <small class="text-uppercase fw-bold"> Keuangan Bersama </small>
+
+          <h2 class="section-title display-6">Informasi Iuran</h2>
+
+          <p class="section-subtitle">Contoh informasi iuran bersama anak kos.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="money-card">
+              <div class="money-icon">
+                <i class="bi bi-wifi"></i>
+              </div>
+
+              <div class="money-price">Rp25.000</div>
+
+              <h5 class="fw-bold">Iuran WiFi</h5>
+
+              <p class="text-secondary">Iuran internet bersama setiap bulan.</p>
+
+              <span class="badge text-bg-success"> Aktif </span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="money-card">
+              <div class="money-icon">
+                <i class="bi bi-droplet"></i>
+              </div>
+
+              <div class="money-price">Rp10.000</div>
+
+              <h5 class="fw-bold">Kebersihan</h5>
+
+              <p class="text-secondary">Iuran untuk kebutuhan kebersihan bersama.</p>
+
+              <span class="badge text-bg-success"> Aktif </span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="money-card">
+              <div class="money-icon">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+
+              <div class="money-price">Sesuai Pemakaian</div>
+
+              <h5 class="fw-bold">Listrik</h5>
+
+              <p class="text-secondary">Pembayaran listrik disesuaikan dengan kesepakatan bersama.</p>
+
+              <span class="badge text-bg-warning"> Perhatian </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     PENGHUNI
+===================================================== -->
+
+    <section
+      id="penghuni"
+      class="section"
+    >
+      <div class="container">
+        <div class="text-center mb-5">
+          <small class="text-uppercase fw-bold"> Teman Serumah </small>
+
+          <h2 class="section-title display-6">Penghuni Kost Imaculata</h2>
+
+          <p class="section-subtitle">Kenali teman-teman yang tinggal bersama di Kost Imaculata.</p>
+        </div>
+
+        <div
+          class="row g-4"
+          id="daftarPenghuni"
+        ></div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     LAPOR MASALAH
+===================================================== -->
+
+    <section
+      id="lapor"
+      class="section section-soft"
+    >
+      <div class="container">
+        <div class="report-box">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <h2>Ada fasilitas yang bermasalah?</h2>
+
+              <p class="text-white-50 mb-0">Jangan dibiarkan. Laporkan supaya kita bisa menyelesaikannya bersama.</p>
+            </div>
+
+            <div class="col-lg-4 text-lg-end">
+              <button
+                class="btn btn-light btn-lg rounded-pill"
+                onclick="laporMasalah()"
+              >
+                <i class="bi bi-tools"></i>
+
+                Laporkan Masalah
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     KEGIATAN
+===================================================== -->
+
+    <section
+      id="kegiatan"
+      class="section"
+    >
+      <div class="container">
+        <div class="text-center mb-5">
+          <small class="text-uppercase fw-bold"> Kebersamaan </small>
+
+          <h2 class="section-title display-6">Kegiatan Anak Kos</h2>
+
+          <p class="section-subtitle">Tidak hanya tinggal bersama, tetapi juga membangun kebersamaan.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="activity-card">
+              <div class="activity-icon">
+                <i class="bi bi-broom-fill"></i>
+              </div>
+
+              <h5 class="fw-bold mt-3">Kerja Bakti</h5>
+
+              <p class="text-secondary">Membersihkan lingkungan kost bersama-sama.</p>
+
+              <span class="badge text-bg-primary"> Rutin </span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="activity-card">
+              <div class="activity-icon">
+                <i class="bi bi-cup-hot-fill"></i>
+              </div>
+
+              <h5 class="fw-bold mt-3">Makan Bersama</h5>
+
+              <p class="text-secondary">Waktu santai dan makan bersama sesama penghuni kost.</p>
+
+              <span class="badge text-bg-success"> Kebersamaan </span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="activity-card">
+              <div class="activity-icon">
+                <i class="bi bi-people-fill"></i>
+              </div>
+
+              <h5 class="fw-bold mt-3">Rapat Anak Kos</h5>
+
+              <p class="text-secondary">Membicarakan kebutuhan dan masalah bersama.</p>
+
+              <span class="badge text-bg-warning"> Berkala </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     ATURAN BERSAMA
+===================================================== -->
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <small class="text-uppercase fw-bold"> Hidup Bersama </small>
+
+          <h2 class="section-title display-6">Kesepakatan Anak Kos</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="rule-card">
+              <div class="rule-item">
+                <i class="bi bi-check-circle-fill"></i>
+
+                <div>
+                  <strong>Jaga kebersihan</strong>
+
+                  <p class="text-secondary mb-0">Setelah menggunakan fasilitas bersama, rapikan kembali.</p>
+                </div>
+              </div>
+
+              <div class="rule-item">
+                <i class="bi bi-volume-down-fill"></i>
+
+                <div>
+                  <strong>Jaga kenyamanan</strong>
+
+                  <p class="text-secondary mb-0">Hindari suara yang terlalu keras, terutama pada waktu istirahat.</p>
+                </div>
+              </div>
+
+              <div class="rule-item">
+                <i class="bi bi-people-fill"></i>
+
+                <div>
+                  <strong>Saling menghargai</strong>
+
+                  <p class="text-secondary mb-0">Setiap penghuni memiliki hak untuk merasa nyaman di tempat tinggalnya.</p>
+                </div>
+              </div>
+
+              <div class="rule-item">
+                <i class="bi bi-shield-check"></i>
+
+                <div>
+                  <strong>Jaga keamanan</strong>
+
+                  <p class="text-secondary mb-0">Pastikan pintu, kendaraan dan barang pribadi tetap aman.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     GRUP WHATSAPP
+===================================================== -->
+
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <i
+            class="bi bi-whatsapp"
+            style="font-size: 55px; color: #25d366"
+          ></i>
+
+          <h2 class="fw-bold mt-3">Grup WhatsApp Anak Kos</h2>
+
+          <p class="text-secondary">Gunakan grup untuk komunikasi dan informasi bersama.</p>
+
+          <a
+            id="linkWhatsApp"
+            href="#"
+            target="_blank"
+            class="btn btn-success rounded-pill px-4"
+          >
+            <i class="bi bi-whatsapp"></i>
+
+            Buka Grup WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     FOOTER
+===================================================== -->
+
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h5>
+              🏠
+              <strong>KOST IMACULATA</strong>
+            </h5>
+
+            <p class="mb-0">Portal internal untuk sesama penghuni Kost Imaculata.</p>
+          </div>
+
+          <div class="col-md-6 text-md-end">
+            <p class="mb-1">Dibuat untuk kebersamaan anak kos.</p>
+
+            <small> © 2026 Kost Imaculata </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+    <a
+      id="whatsappFloating"
+      href="#"
+      target="_blank"
+      class="whatsapp-floating"
+      title="Grup WhatsApp Anak Kos"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      /* =====================================================
+   PENGATURAN
+===================================================== */
+
+      /*
+   GANTI LINK GRUP WHATSAPP DI SINI.
+
+   Contoh:
+   https://chat.whatsapp.com/XXXXXXXXXXXX
+*/
+
+      const LINK_GRUP_WHATSAPP = 'https://chat.whatsapp.com/GANTI_LINK_GRUP_KALIAN';
+
+      /* =====================================================
+   DATA PENGHUNI
+===================================================== */
+
+      const penghuni = [
+        {
+          nama: 'SOFIA KOSAT',
+          kamar: 'Kamar 01',
+        },
+
+        {
+          nama: 'WATI LONGA',
+          kamar: 'Kamar 02',
+        },
+
+        {
+          nama: 'MELI LAKE',
+          kamar: 'Kamar 03',
+        },
+
+        {
+          nama: 'VIAN MAKUN',
+          kamar: 'Kamar 04',
+        },
+
+        {
+          nama: 'EVI FUNAN',
+          kamar: 'Kamar 05',
+        },
+
+        {
+          nama: 'ALDY KOLO',
+          kamar: 'Kamar 06',
+        },
+
+        {
+          nama: 'LINDA LAKE',
+          kamar: 'Kamar 07',
+        },
+
+        {
+          nama: 'MAYKEL KLAU',
+          kamar: 'Kamar 08',
+        },
+
+        {
+          nama: 'PUTRI TAHAF',
+          kamar: 'Kamar 09',
+        },
+
+        {
+          nama: 'DESRI KOLO',
+          kamar: 'Kamar 10',
+        },
+
+        {
+          nama: 'JEN NUBATONIS',
+          kamar: 'Kamar 11',
+        },
+
+        {
+          nama: 'STEFI FANU',
+          kamar: 'Kamar 12',
+        },
+      ];
+
+      /* =====================================================
+   MENAMPILKAN PENGHUNI
+===================================================== */
+
+      const daftarPenghuni = document.getElementById('daftarPenghuni');
+
+      penghuni.forEach(function (data) {
+        const huruf = data.nama.charAt(0);
+
+        daftarPenghuni.innerHTML += `
+
+    <div class="col-6 col-md-4 col-lg-3">
+
+      <div class="member-card">
+
+        <div class="d-flex align-items-center gap-3">
+
+          <div class="member-avatar">
+            ${huruf}
+          </div>
+
+          <div>
+
+            <h5>
+              ${data.nama}
+            </h5>
+
+            <small>
+              <i class="bi bi-door-open"></i>
+              ${data.kamar}
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="mt-3">
+
+          <span class="badge text-bg-success">
+            <i class="bi bi-circle-fill"></i>
+            Penghuni Aktif
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+      });
+
+      /* =====================================================
+   JADWAL PIKET
+===================================================== */
+
+      const jadwalPiket = [
+        {
+          hari: 'Senin',
+          penghuni: 'Sofia Kosat',
+          bagian: 'Halaman',
+          status: 'Selesai',
+        },
+
+        {
+          hari: 'Selasa',
+          penghuni: 'Wati Longa',
+          bagian: 'Dapur',
+          status: 'Proses',
+        },
+
+        {
+          hari: 'Rabu',
+          penghuni: 'Meli Lake',
+          bagian: 'Ruang Bersama',
+          status: 'Belum',
+        },
+
+        {
+          hari: 'Kamis',
+          penghuni: 'Vian Makun',
+          bagian: 'Halaman',
+          status: 'Belum',
+        },
+
+        {
+          hari: 'Jumat',
+          penghuni: 'Evi Funan',
+          bagian: 'Dapur',
+          status: 'Belum',
+        },
+
+        {
+          hari: 'Sabtu',
+          penghuni: 'Aldy Kolo',
+          bagian: 'Ruang Bersama',
+          status: 'Belum',
+        },
+
+        {
+          hari: 'Minggu',
+          penghuni: 'Linda Lake',
+          bagian: 'Halaman',
+          status: 'Belum',
+        },
+      ];
+
+      const tabelPiket = document.getElementById('jadwalPiket');
+
+      jadwalPiket.forEach(function (data, index) {
+        let classStatus = '';
+
+        if (data.status === 'Selesai') {
+          classStatus = 'status-selesai';
+        } else if (data.status === 'Proses') {
+          classStatus = 'status-proses';
+        } else {
+          classStatus = 'status-belum';
+        }
+
+        tabelPiket.innerHTML += `
+
+    <tr>
+
+      <td>
+        ${index + 1}
+      </td>
+
+      <td>
+        <strong>
+          ${data.hari}
+        </strong>
+      </td>
+
+      <td>
+        ${data.penghuni}
+      </td>
+
+      <td>
+        ${data.bagian}
+      </td>
+
+      <td>
+
+        <span class="${classStatus}">
+          ${data.status}
+        </span>
+
+      </td>
+
+    </tr>
+
+  `;
+      });
+
+      /* =====================================================
+   WHATSAPP
+===================================================== */
+
+      document.getElementById('https://chat.whatsapp.com/LO6qQGuvmrREEByxAUOzzB').href = LINK_GRUP_WHATSAPP;
+
+      document.getElementById('https://chat.whatsapp.com/LO6qQGuvmrREEByxAUOzzB').href = LINK_GRUP_WHATSAPP;
+
+      /* =====================================================
+   LAPOR MASALAH
+===================================================== */
+
+      function laporMasalah() {
+        const nomor = '6282339215935';
+
+        const pesan = 'Halo, saya ingin melaporkan masalah di Kost Imaculata. Masalah yang terjadi adalah: ';
+
+        const link = 'https://wa.me/' + nomor + '?text=' + encodeURIComponent(pesan);
+
+        window.open(link, '_blank');
+      }
+    </script>
+  </body>
+</html>
